@@ -4,6 +4,13 @@
 import urllib2
 from bs4 import BeautifulSoup
 
+def get_banamex_dollar():
+	ban_url = "http://www.banamex.com/economia_finanzas/es/divisas_metales/resumen.htm"
+	response = urllib2.urlopen(ban_url)
+	html = response.read()
+	soup = BeautifulSoup(html)
+	
+
 def get_amazon_results(keywords):
     print "Buscando", keywords, ". . ."
     keywords = urllib2.quote(keywords)
